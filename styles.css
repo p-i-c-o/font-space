@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Lausanne';
+    src: url('fonts/Lausanne-Regular.otf') format('opentype');
+  }
+
+
+body {
+    font-family: 'Lausanne', sans-serif;
+}

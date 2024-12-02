@@ -13,7 +13,7 @@
         <p class="top-banner-items">Simple Font Playground</p>
     </div>
     <div class="font-selector-box">
-        <h3 style="text-align: center;">Font Selector</h3>
+        <h3>Font Selector</h3>
         <div class="font-selector">
             <div class="font-button">
                 <button id="button1" style="font-family: 'Lausanne';">Lausanne</button>
@@ -48,12 +48,33 @@
             <div class="font-button">
                 <button id="button11" style="font-family: 'vcr';">VCR</button>
             </div>
+            <div class="font-button">
+                <button id="button12" style="font-family: 'batman';">Batman</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="f-t-box">
+        <div class="font-size-box">
+            <h3>Font Size</h3>
+            <p class="text-size">80px</p>
+            <input class="font-slider" type="range" min="10" max="150" value="80" oninput="adjustFontSize(this.value)" />
+        </div>
+        <div class="font-value-box">
+            <input type="text" id="textInput" placeholder="Type something..." />
         </div>
     </div>
     
+    
+    
 
     <div class="play-element">
-        <p>This is a play element.</p>
+        <p class="play-element-text">Font Generator by dante</p>
+    </div>
+
+    <div class="font-source-box">
+        <h3>Want the font files?</h3>
+        <p>Click <a href="files.html">here</a>.</p>
     </div>
     
     
@@ -72,8 +93,14 @@
       button8: "'minecrafter'",
       button9: "'planet_kosmos'",
       button10: "'urban_jungle'",
-      button11: "'vcr'"
+      button11: "'vcr'",
+      button12: "'batman'"
     };
+
+    const textInput = document.getElementById('textInput');
+    const playElement = document.querySelector('.play-element-text');
+    const fontSizeText = document.querySelector('.text-size');
+    const fontSizeSlider = document.getElementById('fontSizeSlider'); // Assuming there's a slider with this ID
 
     // Add event listeners to each button
     Object.keys(fontMap).forEach(buttonId => {
@@ -83,6 +110,42 @@
           element.style.fontFamily = fontMap[buttonId];
         });
       });
+    });
+
+    // Function to adjust font size directly
+    function adjustFontSize(size) {
+      const elements = document.getElementsByClassName('play-element-text');
+      for (let element of elements) {
+        element.style.fontSize = size + 'px';
+        fontSizeText.textContent = size + 'px';
+        fitTextToBox(element, element.parentElement); // Ensure text fits within the container
+      }
+    }
+
+    // Function to adjust the font size to fit within the box
+    function fitTextToBox(element, container) {
+      let fontSize = parseFloat(window.getComputedStyle(element).fontSize);
+
+      while (
+        (element.scrollWidth > container.clientWidth || element.scrollHeight > container.clientHeight) &&
+        fontSize > 10 // Set a minimum font size limit
+      ) {
+        fontSize--;
+        element.style.fontSize = fontSize + 'px';
+        fontSizeText.textContent = fontSize + 'px';
+      }
+    }
+
+    // Add an event listener to update the paragraph's content
+    textInput.addEventListener('input', () => {
+      playElement.textContent = textInput.value || "Font Generator by dante";
+      fitTextToBox(playElement, playElement.parentElement); // Adjust font size to fit the box
+    });
+
+    // Add an event listener for the font size slider
+    fontSizeSlider.addEventListener('input', () => {
+      const newSize = fontSizeSlider.value;
+      adjustFontSize(newSize);
     });
   </script>
 </html>

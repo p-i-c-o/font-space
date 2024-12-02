@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fonts.css">
     <title>font-space</title>
 </head>
 <body>
@@ -11,5 +12,77 @@
         <h1 class="top-banner-items">Font-Space</h1>
         <p class="top-banner-items">Simple Font Playground</p>
     </div>
+    <div class="font-selector-box">
+        <h3 style="text-align: center;">Font Selector</h3>
+        <div class="font-selector">
+            <div class="font-button">
+                <button id="button1" style="font-family: 'Lausanne';">Lausanne</button>
+            </div>
+            <div class="font-button">
+                <button id="button2" style="font-family: 'Akira';">Akira</button>
+            </div>
+            <div class="font-button">
+                <button id="button3" style="font-family: 'another_danger';">Another Danger</button>
+            </div>
+            <div class="font-button">
+                <button id="button4" style="font-family: 'coolvetica';">Coolvetica</button>
+            </div>
+            <div class="font-button">
+                <button id="button5" style="font-family: 'freshman';">Freshman</button>
+            </div>
+            <div class="font-button">
+                <button id="button6" style="font-family: 'gang_of_three';">Gang of Three</button>
+            </div>
+            <div class="font-button">
+                <button id="button7" style="font-family: 'keep_on_truckin';">Keep on Truckin'</button>
+            </div>
+            <div class="font-button">
+                <button id="button8" style="font-family: 'minecrafter';">Minecrafter</button>
+            </div>
+            <div class="font-button">
+                <button id="button9" style="font-family: 'planet_kosmos';">Planet Kosmos</button>
+            </div>
+            <div class="font-button">
+                <button id="button10" style="font-family: 'urban_jungle';">Urban Jungle</button>
+            </div>
+            <div class="font-button">
+                <button id="button11" style="font-family: 'vcr';">VCR</button>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="play-element">
+        <p>This is a play element.</p>
+    </div>
+    
+    
 </body>
+
+<script>
+    // Dictionary mapping button IDs to font styles
+    const fontMap = {
+      button1: "'Lausanne', sans-serif",
+      button2: "'akira'",
+      button3: "'another_danger'",
+      button4: "'coolvetica'",
+      button5: "'freshman'",
+      button6: "'gang_of_three'",
+      button7: "'keep_on_truckin'",
+      button8: "'minecrafter'",
+      button9: "'planet_kosmos'",
+      button10: "'urban_jungle'",
+      button11: "'vcr'"
+    };
+
+    // Add event listeners to each button
+    Object.keys(fontMap).forEach(buttonId => {
+      document.getElementById(buttonId).addEventListener('click', () => {
+        // Change the font of all elements with the 'play-element' class
+        document.querySelectorAll('.play-element').forEach(element => {
+          element.style.fontFamily = fontMap[buttonId];
+        });
+      });
+    });
+  </script>
 </html>

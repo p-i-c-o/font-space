@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'Lausanne';
+    src: url('./fonts/Lausanne-Regular.otf') format('opentype'); /* Adjust path */
+}
+
+@font-face {
+    font-family: 'keep_on_truckin';
+    src: url('./fonts/keep_on_truckin.ttf') format('truetype'); /* Adjust path */
+}
+
+@font-face {
+    font-family: 'vcr';
+    src: url('./fonts/vcr.ttf') format('truetype'); /* Adjust path */
+}
+
+@font-face {
+    font-family: 'akira';
+    src: url('./fonts/akira.otf') format('opentype'); /* Adjust path */
+}
+
+@font-face {
+    font-family: 'another_danger';
+    src: url('./fonts/another_danger.otf') format('opentype'); /* Adjust path */
+}
+
+@font-face {
+    font-family: 'coolvetica';
+    src: url('./fonts/coolvetica.otf') format('opentype'); /* Adjust path */
+}
+
+@font-face {
+    font-family: 'freshman';
+    src: url('./fonts/freshman.ttf') format('truetype'); /* Adjust path */
+}
+
+@font-face {
+    font-family: 'gang_of_three';
+    src: url('./fonts/gang_of_three.ttf') format('truetype'); /* Adjust path */
+}
+
+@font-face {
+    font-family: 'minecrafter';
+    src: url('./fonts/minecrafter.ttf') format('truetype'); /* Adjust path */
+}
+
+@font-face {
+    font-family: 'planet_kosmos';
+    src: url('./fonts/planet_kosmos.ttf') format('truetype'); /* Adjust path */
+}
+
+@font-face {
+    font-family: 'urban_jungle';
+    src: url('./fonts/urban_jungle.otf') format('opentype'); /* Adjust path */
+}
